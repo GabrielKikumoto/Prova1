@@ -8,9 +8,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  double number01 = 0;
-  double number02 = 0;
-  double result = 0;
+  double n1 = 0;
+  double n2 = 0;
+  double res = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +39,10 @@ class _HomeState extends State<Home> {
                 child: TextField(
                   onChanged: (value) {
                     if (value.isEmpty) {
-                      setState(() => number01 = 0);
+                      setState(() => n1 = 0);
                     } else {
                       setState(() {
-                        number01 = double.parse(value);
+                        n1 = double.parse(value);
                       });
                     }
                   },
@@ -57,10 +57,10 @@ class _HomeState extends State<Home> {
                 child: TextField(
                   onChanged: (value) {
                     if (value.isEmpty) {
-                      setState(() => number02 = 0);
+                      setState(() => n2 = 0);
                     } else {
                       setState(() {
-                        number02 = double.parse(value);
+                        n2 = double.parse(value);
                       });
                     }
                   },
@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
                   child: TextButton(
                     onPressed: () {
                       setState(() {
-                        result = number01 + number02;
+                        res = n1 + n2;
                       });
                     },
                     style: TextButton.styleFrom(
@@ -112,7 +112,7 @@ class _HomeState extends State<Home> {
                   child: TextButton(
                     onPressed: () {
                       setState(() {
-                        result = number01 - number02;
+                        res = n1 - n2;
                       });
                     },
                     style: TextButton.styleFrom(
@@ -133,7 +133,7 @@ class _HomeState extends State<Home> {
                   child: TextButton(
                     onPressed: () {
                       setState(() {
-                        result = number01 * number02;
+                        res = n1 * n2;
                       });
                     },
                     style: TextButton.styleFrom(
@@ -154,7 +154,7 @@ class _HomeState extends State<Home> {
                   child: TextButton(
                     onPressed: () {
                       setState(() {
-                        result = number01 / number02;
+                        res = n1 / n2;
                       });
                     },
                     style: TextButton.styleFrom(
@@ -172,7 +172,7 @@ class _HomeState extends State<Home> {
             alignment: Alignment.centerLeft,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 20),
-              child: Text('Resultado: ' + result.toString(),
+              child: Text('Resultado: ' + res.toString(),
                   style: TextStyle(fontSize: 30)),
             )
           )
